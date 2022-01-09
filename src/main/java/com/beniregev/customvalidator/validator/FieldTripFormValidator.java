@@ -26,7 +26,7 @@ public class FieldTripFormValidator implements Validator {
             ValidationUtils.rejectIfEmptyOrWhitespace(
                     errors, "name",
                     "error.name",
-                    "Nameis required.");
+                    "Name is required.");
 
             if (form.getAge() < 18) {
                 ValidationUtils.rejectIfEmptyOrWhitespace(
