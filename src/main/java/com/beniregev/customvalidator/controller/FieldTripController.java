@@ -15,10 +15,14 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api")
 public class FieldTripController {
-    @Autowired
-    private FieldTripFormValidator ftfValidator;
+    private final FieldTripFormValidator ftfValidator;
     @Autowired
     private FieldTripService ftService;
+
+    public FieldTripController(FieldTripFormValidator ftfValidator) {
+        this.ftfValidator = ftfValidator;
+    }
+
     @InitBinder(value = "fieldTripForm")
     protected void initBinder(WebDataBinder binder) {
         binder.setValidator(ftfValidator);
